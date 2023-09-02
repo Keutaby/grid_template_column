@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+.contenedor > * {
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* , ---> class # ---> id */
+
+.header{
+    grid-area: header;
+    background: rgb(114, 165, 213);
+    font-size: 50px;
+    color: azure;
+}
+#navbar{
+    grid-area: navbar;
+    background-color: rgb(138, 202, 255);
+}
+#main{
+    grid-area: main;
+    background-color: rgb(186, 223, 253);
+}
+h1{
+    color: rgb(15, 83, 108);
+}
+h2{
+    color: rgb(138, 87, 255);
+}
+h3{
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+#sidebar, br{
+    font-size: 20px;
+    padding: 20px;
+}
+#sidebar{
+    grid-area: sidebar;
+    background-color: rgb(138, 202, 255);
+    color: rgb(65, 9, 176);
+}
+#footer{
+    grid-area: footer;
+    background: rgb(114, 165, 213);
+    color: rgb(69, 69, 69);
+    font-size: 30px;
+}
+a{
+    color: rgb(69, 69, 69);
+    text-decoration: none;
+}
+
+/* ---------- grid template column ---------- */
+
+.contenedor{
+    display: grid;
+    gap: 10px;
+    grid-template:  "header"    100px
+                    "navbar"    50px
+                    "main"      auto
+                    "sidebar"   100px
+                    "footer"    100px;
+}
+
+/* ---------- @media 600 ---------- */
+
+@media (min-width: 600px){
+    .contenedor{
+    grid-template:  "header header" 100px
+                    "navbar navbar" 50px
+                    "sidebar main" auto
+                    "footer footer" 100px /
+                    200px auto;
+    }
+}
+
+/* ---------- @media 900 ---------- */
+
+@media (min-width: 900px){
+    .contenedor{
+    grid-template:  "header header header" 100px
+                    "navbar main sidebar" auto
+                    "footer footer footer" 100px /
+                    200px auto 200px;
+    }
+}
